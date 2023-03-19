@@ -10,24 +10,23 @@ Algumas das principais funcionalidades do EasyFinance incluem:
   + Definição de orçamento
   + Geração de relatórios personalizados
   + Autenticação e autorização de usuários
-  + Tecnologias utilizadas
-  
-## O EasyFinance foi desenvolvido utilizando as seguintes tecnologias:
+## Tecnologias utilizadas
+O EasyFinance foi desenvolvido utilizando as seguintes tecnologias:
 
   + Angular
   + Spring Boot
   + Spring Data JPA
   + Spring Security
   + PostgreSQL
-  + Como contribuir
   
 ## Layout do sistema:
 Caso deseje uma experiência mais interativa e sem precisar fazer o clone para a sua máquina local [clique aqui!](https://www.figma.com/proto/kZai0FcFEcpSnoeWhyM4D0/ModeloDeDominio?node-id=109-2&starting-point-node-id=109%3A2)
 
 &nbsp;
-![imagem EasyFinance](http://url/to/img.png)
-  
-## Se você gostaria de contribuir com o projeto, por favor, siga os seguintes passos:
+![imagem EasyFinance](https://github.com/GabrielDantas-99/EasyFinance/blob/main/frontend/src/assets/imgs/home_easyfinance.png)
+ 
+## Como contribuir
+Se você gostaria de contribuir com o projeto, por favor, siga os seguintes passos:
 
   + Faça um fork do repositório.
   + Clone o repositório para a sua máquina local.
@@ -42,7 +41,7 @@ Para executar o EasyFinance em sua máquina local, siga os seguintes passos:
 
   + Clone o repositório para a sua máquina local.
   + Instale as dependências do frontend executando npm install na pasta frontend.
-  + Configure o banco de dados PostgreSQL com as informações presentes no arquivo application.properties.
+  + Configure o banco de dados MySQL com as informações presentes no arquivo application.properties:
   + Execute a aplicação backend executando mvn spring-boot:run na pasta backend.
   + Execute a aplicação frontend executando ng serve na pasta frontend.
   + Acesse a aplicação em http://localhost:4200.
