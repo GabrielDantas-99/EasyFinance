@@ -11,10 +11,12 @@ import 'boxicons';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { OverviewComponent } from './components/overview/overview.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OverviewComponent
   ],
   imports: [
     BrowserModule,
