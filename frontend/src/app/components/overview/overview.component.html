@@ -1,44 +1,47 @@
 <div class="conteudo">
     <div class="toolbar d-flex justify-content-between text-white">
         <div class="user d-flex justify-content-between align-items-center">
-            <!-- <div class="user-img bg-white mr-3 rounded-circle "></div> -->
-            <img src="../../../assets/imgs/perfil.png" class="rounded-circle mr-3" 
-                alt="Imagem de Perfil" width="50" height="50">
+            <img src="../../../assets/imgs/perfil.png" class="rounded-circle mr-3" alt="Imagem de Perfil" width="50"
+                height="50" />
             <p>Olá, Gabriel Dantas!</p>
         </div>
         <div class="buttons d-flex justify-content-between align-items-center">
             <div class="light-control d-flex align-items-center">
                 <div class="circle bg-white d-flex justify-content-center align-items-center">
-                    <i class='bx bx-sun text-primary'></i>
+                    <i class="bx bx-sun text-primary"></i>
                 </div>
             </div>
             <a rounterLink="">
-                <i class='bx bxs-cog'></i>
+                <i class="bx bxs-cog"></i>
             </a>
             <a rounterLink="">
-                <i class='bx bx-exit'></i>
+                <i class="bx bx-exit"></i>
             </a>
         </div>
     </div>
     <div class="form w-75 mx-auto p-4 bg-white rounded-4">
-        <h3 class="text-primary font-weight-bold text-center">Adicionar Lançamento</h3>
+        <h3 class="text-primary font-weight-bold text-center">
+            Adicionar Lançamento
+        </h3>
         <div class="row">
             <div class="col-lg-3 mt-2">
-                <input class="form-control" type="text" placeholder="Título para lançamento">
+                <input class="form-control" type="text" placeholder="Título para lançamento" />
             </div>
             <div class="col-lg-3 mt-2">
-                <input class="form-control" type="text" placeholder="Categoria">
+                <input class="form-control" type="text" placeholder="Categoria" />
             </div>
             <div class="col-lg-3 mt-2">
-                <input class="form-control" type="text" placeholder="R$ Valor do lançamento">
+                <input class="form-control" type="text" placeholder="R$ Valor do lançamento" />
             </div>
             <div class="col-lg-3 mt-2">
-                <input class="form-control" type="text" placeholder="Forma de pagamento">
+                <input class="form-control" type="text" placeholder="Forma de pagamento" />
             </div>
         </div>
         <div class="mx-auto d-flex justify-content-between" style="width: 240px">
             <button class="btn btn-primary mt-4">Adicionar</button>
-            <button class="btn btn-outline-primary mt-4">Cancelar</button>
+            <button class="btn btn-outline-primary mt-4">
+                Cancelar
+            </button>
         </div>
     </div>
     <div class="values row w-75 mx-auto text-white my-2 p-4">
@@ -56,47 +59,51 @@
         </div>
     </div>
     <div class="card w-75 mx-auto p-4 bg-white rounded-4">
-        <h3 class="text-secondary font-weight-bold text-center mb-0">Lista de Lançamentos</h3>
+        <h3 class="text-secondary font-weight-bold text-center mb-0">
+            Lista de Lançamentos
+        </h3>
         <table class="text-center pr-3">
             <thead>
-              <tr>
-                <td style="min-width: 20px"></td>
-                <th class="text-center text-muted py-3"
-                  *ngFor="let c of colunasLancamentos; let i = index"
-                >
-                    <span>
+                <tr>
+                    <td style="min-width: 20px"></td>
+                    <th class="text-center text-muted py-3" *ngFor="
+							let c of colunasLancamentos;
+							let i = index
+						">
                         {{ c }}
-                    </span>
-                </th>
-              </tr>
+                    </th>
+                </tr>
             </thead>
-            <tbody >
-              <tr class="my-2 " *ngFor="let l of lancamentos; let i = index">
-                <td><div class="border-l-3 mx-auto"></div></td>
-                <td class="text-muted py-1">
-                    {{ l.titulo }}
-                    <!-- <div class="border-l-3"></div> -->
-                    <!-- <span class="ml-4 pl-4">{{ l.titulo }}</span> -->
-                </td>
-                <td class="text-muted py-1">
-                    {{ l.categoria }}
-                </td>
-                <td class="text-muted py-1">
-                    {{ l.valor }}
-                </td>
-                <td class="text-muted py-1">
-                    {{ l.formaPagamento }}
-                </td>
-                <td class="text-muted py-1 row justify-content-around">
-                    <button class="action-btn edit" (click)="editar(l.id)">
-                        <i class='text-primary bx bxs-edit'></i>
-                    </button>
-                    <button class="action-btn delete" (click)="excluir(l.id)">
-                        <i class='text-primary bx bx-trash'></i>
-                    </button>
-                </td>
-              </tr>
+            <tbody>
+                <tr class="my-2" *ngFor="
+						let l of lancamentos;
+						let i = index
+					">
+                    <td>
+                        <div class="border-l-3 mx-auto"></div>
+                    </td>
+                    <td class="text-muted py-1">
+                        {{ l.titulo }}
+                    </td>
+                    <td class="text-muted py-1">
+                        {{ l.categoria }}
+                    </td>
+                    <td class="text-muted py-1">
+                        {{ l.valor }}
+                    </td>
+                    <td class="text-muted py-1">
+                        {{ l.formaPagamento }}
+                    </td>
+                    <td class="text-muted py-1 row justify-content-around">
+                        <button class="action-btn edit" (click)="editar(l.id)">
+                            <i class="text-primary bx bxs-edit"></i>
+                        </button>
+                        <button class="action-btn delete" (click)="excluir(l.id)">
+                            <i class="text-primary bx bx-trash"></i>
+                        </button>
+                    </td>
+                </tr>
             </tbody>
-          </table>
+        </table>
     </div>
 </div>

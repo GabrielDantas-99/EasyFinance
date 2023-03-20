@@ -24,6 +24,28 @@ p { margin-bottom: 0 !important; }
 
 button:focus  { outline: none; }
 
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #00000045 !important;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #00000045 !important;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #00000045 !important;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #00000045 !important;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #00000045 !important;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+   color:    #00000045 !important;
+}
+
 /*  BOOTSTRAP EDITION  */
 .text-primary { color: var(--text-primary) !important }
 .text-secondary { color: var(--text-secondary) !important }
