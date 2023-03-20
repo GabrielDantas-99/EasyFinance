@@ -55,4 +55,48 @@
             <h2>R$ 211,42</h2>
         </div>
     </div>
+    <div class="card w-75 mx-auto p-4 bg-white rounded-4">
+        <h3 class="text-secondary font-weight-bold text-center mb-0">Lista de Lançamentos</h3>
+        <table class="text-center pr-3">
+            <thead>
+              <tr>
+                <td style="min-width: 20px"></td>
+                <th class="text-center text-muted py-3"
+                  *ngFor="let c of colunasLancamentos; let i = index"
+                >
+                    <span>
+                        {{ c }}
+                    </span>
+                </th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr class="my-2 " *ngFor="let l of lancamentos; let i = index">
+                <td><div class="border-l-3 mx-auto"></div></td>
+                <td class="text-muted py-1">
+                    {{ l.titulo }}
+                    <!-- <div class="border-l-3"></div> -->
+                    <!-- <span class="ml-4 pl-4">{{ l.titulo }}</span> -->
+                </td>
+                <td class="text-muted py-1">
+                    {{ l.categoria }}
+                </td>
+                <td class="text-muted py-1">
+                    {{ l.valor }}
+                </td>
+                <td class="text-muted py-1">
+                    {{ l.formaPagamento }}
+                </td>
+                <td class="text-muted py-1 row justify-content-around">
+                    <button class="action-btn edit" (click)="editar(l.id)">
+                        <i class='text-primary bx bxs-edit'></i>
+                    </button>
+                    <button class="action-btn delete" (click)="excluir(l.id)">
+                        <i class='text-primary bx bx-trash'></i>
+                    </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
 </div>
