@@ -13,9 +13,10 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { OverviewComponent } from "./components/overview/overview.component";
 import { MaterialModule } from "./shared/material/material.module";
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
-	declarations: [AppComponent, OverviewComponent],
+	declarations: [AppComponent, OverviewComponent, LoginComponent],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,

@@ -1,0 +1,30 @@
+.conteudo {
+    background: var(--text-primary);
+    height: 100vh;
+    .card {
+        max-width: 800px;
+        min-width: 350px;
+        box-shadow: 0 9.6px 19.2px 10px #00000010;
+        .row {
+            .image-mobile { display: none; }
+            .col-lg-12 {
+                .form-control {
+                    border: none;
+                    background: rgb(232 240 254);
+                }
+                i {
+                    position: absolute;
+                    right: 10px;
+                    top: 20px;
+                    font-size: 25px;
+                }
+                a { font-size: 14px; }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    .image-mobile { display: block !important; }
+    .image-desktop { display: none; }
+}
