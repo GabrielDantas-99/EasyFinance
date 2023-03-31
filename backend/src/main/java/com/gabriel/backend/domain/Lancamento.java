@@ -33,7 +33,6 @@ public class Lancamento implements Serializable {
 	private int quantParcelas;
 	private Double valorParcelas;
 	
-	
 	@ManyToOne
 	@JoinColumn(name = "categoria_id")
 	private Categoria categoria;
@@ -60,7 +59,7 @@ public class Lancamento implements Serializable {
 
 	public void setFormaPagamento(FormaPagamento formaPagamento) {
 		if (formaPagamento != null) {
-			this.formaPagamento = formaPagamento.getCode();
+			this.formaPagamento = formaPagamento.getCodigo();
 		}
 	}
 	

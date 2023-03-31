@@ -2,27 +2,34 @@ package com.gabriel.backend.domain.enums;
 
 public enum FormaPagamento {
 	
-	CREDITO(1),
-	DEBITO(2),
-	BOLETO(3),
-	PIX(4);
+	CREDITO(1, "Crédito"),
+	DEBITO(2, "Débito"),
+	BOLETO(3, "Boleto"),
+	PIX(4, "Pix");
 	
-	private int code;
+	private Integer codigo;
+	private String descricao;
 	
-	private FormaPagamento(int code) {
-		this.code = code;
+	private FormaPagamento(Integer codigo, String descricao) {
+		this.codigo = codigo;
+		this.descricao = descricao;
 	}
-	
-	public int getCode() {
-		return code;
+
+	public Integer getCodigo() {
+		return codigo;
+	}
+
+	public String getDescricao() {
+		return descricao;
 	}
 	
 	public static FormaPagamento valueOf(int code) {
 		for (FormaPagamento value : FormaPagamento.values()) {
-			if (value.getCode() == code) {
+			if (value.getCodigo() == code) {
 				return value;
 			}
 		}
 		throw new IllegalArgumentException("Código de forma de pagamento inválido!");
 	}
+	
 }
