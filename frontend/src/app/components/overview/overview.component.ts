@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Lancamento } from 'src/app/models/Lancamento.model';
+import { LancamentoService } from 'src/app/services/lancamento.service';
 
 @Component({
   selector: 'app-overview',
@@ -9,12 +11,16 @@ export class OverviewComponent implements OnInit {
 
   colunasLancamentos: string[] = ['Lançamento', 'Categoria', 'Valor', 'Forma de Pagamento', ''];
 
-  lancamentos: Lancamento[] = [
-    { id: 1, titulo: 'Playstation 5', categoria: 'Lazer', valor: 4999.97, formaPagamento: 'Crédito' },
-    { id: 1, titulo: 'Playstation 5', categoria: 'Lazer', valor: 4999.97, formaPagamento: 'Crédito' }
-  ];
+  lancamentos: Lancamento[] = [];
+
+  constructor(
+    private service: LancamentoService
+  ) {}
 
   ngOnInit(): void {
+    this.service.findAll().subscribe((response: Lancamento[]) => {
+      this.lancamentos = response;
+    })
   }
 
   editar(id: number): void {
@@ -27,10 +33,4 @@ export class OverviewComponent implements OnInit {
 
 }
 
-export interface Lancamento {
-  id?: number;
-  titulo: string;
-  categoria: string;
-  valor: number;
-  formaPagamento: string;
-}
+
