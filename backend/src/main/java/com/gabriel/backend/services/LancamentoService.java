@@ -36,6 +36,13 @@ public class LancamentoService {
 		return lancamentoRepository.save(newLancamento(obj));
 	}
 
+	public Lancamento update(Long id, @Valid LancamentoDTO objDTO) {
+		objDTO.setId(id);
+		Lancamento oldObj = findById(id);
+		oldObj = newLancamento(objDTO);
+		return lancamentoRepository.save(oldObj);
+	}
+
 	private Lancamento newLancamento(LancamentoDTO obj) {
 		Categoria categoria = categoriaService.findById(obj.getCategoriaId());
 		Lancamento lancamento = new Lancamento();
@@ -52,6 +59,5 @@ public class LancamentoService {
 		return lancamento;
 		
 	}
-	
 
 }
