@@ -7,6 +7,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -50,6 +51,12 @@ public class LancamentoResource {
 	public ResponseEntity<LancamentoDTO> update(@PathVariable Long id, @Valid @RequestBody LancamentoDTO obj) {
 		Lancamento newObj = lancamentoService.update(id, obj);
 		return ResponseEntity.ok().body(new LancamentoDTO(newObj));
+	}
+	
+	@DeleteMapping(value = "/{id}")
+	public ResponseEntity<LancamentoDTO> delete(@PathVariable Long id) {
+		lancamentoService.delete(id); 
+		return ResponseEntity.noContent().build();
 	}
 
 }
