@@ -8,7 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 import com.gabriel.backend.domain.enums.FormaPagamento;
 
@@ -32,6 +31,10 @@ public class Lancamento implements Serializable {
 	private Integer formaPagamento;
 	private int quantParcelas;
 	private Double valorParcelas;
+	
+	@ManyToOne
+	@JoinColumn(name = "cliente_id")
+	private Cliente cliente;
 	
 	@ManyToOne
 	@JoinColumn(name = "categoria_id")
@@ -62,6 +65,5 @@ public class Lancamento implements Serializable {
 			this.formaPagamento = formaPagamento.getCodigo();
 		}
 	}
-	
 	
 }
