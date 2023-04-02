@@ -13,6 +13,7 @@ import com.gabriel.backend.domain.Lancamento;
 import com.gabriel.backend.domain.dtos.LancamentoDTO;
 import com.gabriel.backend.domain.enums.FormaPagamento;
 import com.gabriel.backend.repositories.LancamentoRepository;
+import com.gabriel.backend.services.exceptions.ObjectnotFoundException;
 
 @Service
 public class LancamentoService {
@@ -29,7 +30,7 @@ public class LancamentoService {
 
 	public Lancamento findById(Long id) {
 		Optional<Lancamento> obj = lancamentoRepository.findById(id);
-		return obj.orElse(null);
+		return obj.orElseThrow(() -> new ObjectnotFoundException("Objeto de id: " + id + " não encontrado!"));
 	}
 
 	public Lancamento create(@Valid LancamentoDTO obj) {
@@ -61,6 +62,10 @@ public class LancamentoService {
 	}
 
 	public void delete(Long id) {
+		Optional<Lancamento> obj = lancamentoRepository.findById(id);
+		if (obj.isEmpty()) {
+			throw new ObjectnotFoundException("Lançamento de Id: " + id + " não encontrado!");
+		}
 		lancamentoRepository.deleteById(id);
 	}
 
