@@ -1,0 +1,23 @@
+<div class="conteudo">
+    <div class="toolbar d-flex justify-content-between text-white">
+        <div class="user d-flex justify-content-between align-items-center">
+            <img src="../../../assets/imgs/perfil.png" class="rounded-circle mr-3" alt="Imagem de Perfil" width="50"
+                height="50" />
+            <p>Olá, Gabriel Dantas!</p>
+        </div>
+        <div class="buttons d-flex justify-content-between align-items-center">
+            <div class="light-control d-flex align-items-center">
+                <div class="circle bg-white d-flex justify-content-center align-items-center">
+                    <i class="bx bx-sun text-primary"></i>
+                </div>
+            </div>
+            <a rounterLink="">
+                <i class="bx bxs-cog"></i>
+            </a>
+            <a class="logout" (click)="logout()">
+                <i class="bx bx-exit"></i>
+            </a>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</div>

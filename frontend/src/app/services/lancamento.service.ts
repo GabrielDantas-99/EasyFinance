@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Lancamento } from '../models/Lancamento.model';
-import { API } from '../config/API.config';
+import { API } from '../config/api.config';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
