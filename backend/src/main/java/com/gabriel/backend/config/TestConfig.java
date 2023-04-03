@@ -49,7 +49,7 @@ public class TestConfig implements CommandLineRunner {
 		Lancamento l3 = new Lancamento(null, "Viagem Pipa", 550.00, FormaPagamento.CREDITO, 10, 50.00, cat1);
 		
 		// Instanciando novos Usuarios
-		Cliente u1 = new Cliente(null, "Gabriel", "573.634.770-94", "gabriel@gmail.com", encoder.encode("123321"));
+		Cliente u1 = new Cliente(null, "Gabriel", "573.634.770-94", "gabriel@mail.com", encoder.encode("123321"));
 		u1.addPerfil(Perfil.ADMIN);
 		lancamentoRepository.saveAll(Arrays.asList(l1, l2, l3));
 		usuarioRepository.save(u1);

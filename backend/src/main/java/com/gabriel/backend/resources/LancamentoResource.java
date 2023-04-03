@@ -2,6 +2,8 @@ package com.gabriel.backend.resources;
 
 import java.net.URI;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
@@ -29,9 +31,10 @@ public class LancamentoResource {
 	private LancamentoService lancamentoService;
 	
 	@GetMapping
-	public ResponseEntity<List<Lancamento>> findAll() {
+	public ResponseEntity<List<LancamentoDTO>> findAll() {
 		List<Lancamento> lista = lancamentoService.findAll();
-		return ResponseEntity.ok().body(lista);
+		List<LancamentoDTO> listDTO = lista.stream().map(obj -> new LancamentoDTO(obj)).collect(Collectors.toList());
+		return ResponseEntity.ok().body(listDTO);
 	}
 	
 	@GetMapping(value = "/{id}")
