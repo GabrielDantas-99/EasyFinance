@@ -1,11 +1,13 @@
 import { Categoria } from "./Categoria.model";
+import { FormaPagamento } from "./FormasPagamento.model";
 
 export interface Lancamento {
 	id?: number;
     titulo: string;
     total: number;
-    formaPagamento: string;
+    formaPagamento: number;
     quantParcelas: number;
     valorParcelas: number;
-    categoria: Categoria
+    categoriaId: any;
+    nomeCategoria: string;
 }

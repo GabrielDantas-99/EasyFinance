@@ -8,13 +8,17 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class LancamentoService {
-
+  
   constructor(
     private http: HttpClient
   ) { }
-
+    
   findAll(): Observable<Lancamento[]> {
     return this.http.get<Lancamento[]>(`${API.local}/lancamentos`);
+  }
+
+  create(lancamento: Lancamento) {
+    return this.http.post<Lancamento>(`${API.local}/lancamentos`, lancamento);
   }
 
 }

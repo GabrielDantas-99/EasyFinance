@@ -17,6 +17,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptorProvider } from "./interceptors/auth.interceptor";
 import { ToastrModule } from "ngx-toastr";
 import { MenuComponent } from './components/menu/menu.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
 	declarations: [AppComponent, OverviewComponent, LoginComponent, MenuComponent],
@@ -28,11 +29,14 @@ import { MenuComponent } from './components/menu/menu.component';
 		// Forms
 		FormsModule,
 		ReactiveFormsModule,
+		//Angular Material
+		MaterialModule,
 		ToastrModule.forRoot({
 			timeOut: 4000,
 			closeButton: true,
 			progressBar: true
 		}),
+  BrowserAnimationsModule,
 	],
 	providers: [
 		AuthInterceptorProvider,
